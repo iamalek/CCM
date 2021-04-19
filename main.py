@@ -1,3 +1,4 @@
+
 print("This main.py")
 
 # Make sure the corners are active
@@ -51,10 +52,16 @@ try:
 except ImportError:
     import requests
 
-#r = requests.get("https://raw.githubusercontent.com/robert-hh/FTP-Server-for-ESP8266-ESP32-and-PYBD/master/uftpd.py")
+r = requests.get("https://raw.githubusercontent.com/iamalek/CCM/main/new_update.txt")
 #print(r)
 #print(r.content)
-#print(r.text)
+print(r.text)
+index = r.text.find("1")
+print(index)      
+if index >= 0:
+  print("new_update")
+r.close()
+
 #print(r.json())
 
 # It's mandatory to close response objects as soon as you finished
@@ -72,4 +79,3 @@ except ImportError:
 #file = open ("uftpd_.py", "r")
 #print(file.read())
 #file.close()
-
